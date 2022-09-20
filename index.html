@@ -15,9 +15,9 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="bg-light w-100 min-vh-100 pt-4 pb-4">
-      <div class="container text-bg-secondary w-50 p-4">
-        <form class="needs-validation" novalidate>
+    <div class="bg-light w-100 min-vh-100 pt-4 pb-4 position-relative">
+      <div class="container text-bg-secondary w-75 p-4">
+        <form class="needs-validation form" novalidate>
           <div class="mb-3">
             <label for="firstName" class="form-label">First Name</label>
             <input
@@ -81,7 +81,7 @@
             </select>
           </div>
           <div class="mb-3">
-            <label for="notes" class="form-label">Notes</label>
+            <label for="notes" class="form-label">Note</label>
             <textarea class="form-control" id="notes" rows="3"></textarea>
           </div>
 
@@ -91,9 +91,9 @@
 
       <hr class="mt-5" />
 
-      <div class="mt-5 w-100 d-flex justify-content-center">
-        <div class="w-75 mb-5 p-4 position-relative">
-          <table class="table">
+      <div class="mt-5 w-100 d-flex p-3 justify-content-center">
+        <div class="table-responsive w-100">
+          <table class="table table-hover">
             <thead>
               <tr>
                 <th scope="col">ID</th>
@@ -105,14 +105,29 @@
                 <th scope="col">Delete</th>
               </tr>
             </thead>
-            <tbody id="t-body-info"></tbody>
+            <tbody class="table-group-divider" id="t-body-info"></tbody>
           </table>
+        </div>
+      </div>
+
+      <div
+        class="position-absolute top-0 start-0 w-100 h-100 note-modal-bg"
+        style="background-color: rgba(0, 0, 0, 0.347)"
+      >
+        <div
+          class="position-fixed top-50 start-50 translate-middle w-75 h-75 bg-light note-modal-container"
+        >
+          <i
+            class="fa-solid fa-rectangle-xmark position-absolute end-0 fs-3 p-1 text-danger close-btn"
+            style="cursor: pointer"
+          ></i>
+          <div class="p-4 w-100 h-100 text-container"></div>
         </div>
       </div>
     </div>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer type="module" src="./js/index.js"></script>
+    <script defer src="./index.js"></script>
   </body>
 </html>
