@@ -21,15 +21,11 @@ const initialData = {
 
 Array.prototype.slice.call(inputs).forEach((input, index) => {
   input.addEventListener("change", (e) => {
-    initialData.date = input.date.value;
-    initialData.gender = input.gender.value;
-    localStorage.setItem("inputData", JSON.stringify(initialData));
-  });
-
-  input.addEventListener("keyup", (e) => {
     initialData.firstName = input.firstName.value;
     initialData.lastName = input.lastName.value;
     initialData.address = input.address.value;
+    initialData.date = input.date.value;
+    initialData.gender = input.gender.value;
     initialData.notes = input.notes.value;
 
     localStorage.setItem("inputData", JSON.stringify(initialData));
